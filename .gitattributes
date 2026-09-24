@@ -1,2 +1,29 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# CodeAlpha Task 2 - Stock Portfolio Tracker
+
+# Hardcoded stock prices
+stock_prices = {
+    "AAPL": 180,
+    "TSLA": 250,
+    "GOOGL": 150,
+    "MSFT": 420
+}
+
+print("===== Stock Portfolio Tracker =====")
+print("Available Stocks:", ", ".join(stock_prices.keys()))
+
+# Get stock name and quantity from the user
+stock_name = input("Enter stock name: ").upper()
+quantity = int(input("Enter quantity: "))
+
+# Check whether the stock is available
+if stock_name in stock_prices:
+    price = stock_prices[stock_name]
+    total_investment = price * quantity
+
+    print("\n----- Portfolio Details -----")
+    print("Stock Name:", stock_name)
+    print("Price per Share:", price)
+    print("Quantity:", quantity)
+    print("Total Investment:", total_investment)
+else:
+    print("Sorry, this stock is not available.")
